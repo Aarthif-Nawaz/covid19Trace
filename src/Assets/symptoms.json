@@ -1,0 +1,77 @@
+[
+    {
+        "id":0,
+        "key":"Fever",
+        "checked":false
+    },
+    {
+        "id":1,
+        "key":"Dry Cough",
+        "checked":false
+    },
+    {
+        "id":2,
+        "key":"Tiredness",
+        "checked":false
+    },
+    {
+        "id":3,
+        "key":"Aches & Pains",
+        "checked":false
+    },
+    {
+        "id":4,
+        "key":"Sore Throat",
+        "checked":false
+    },
+    {
+        "id":5,
+        "key":"Diarrhoea",
+        "checked":false
+    },
+    {
+        "id":6,
+        "key":"Phlegm",
+        "checked":false
+    },
+    {
+        "id":7,
+        "key":"Feeling Nausea",
+        "checked":false
+    },
+    {
+        "id":8,
+        "key":"Conjunctivitis",
+        "checked":false
+    },
+    {
+        "id":9,
+        "key":"Headache",
+        "checked":false
+    },
+    {
+        "id":10,
+        "key":"Loss Of Taste Or Smell",
+        "checked":false
+    },
+    {
+        "id":11,
+        "key":"Loss Of Speech Or Movement",
+        "checked":false
+    },
+    {
+        "id":12,
+        "key":"Chest Pain Or Pressure",
+        "checked":false
+    },
+    {
+        "id":13,
+        "key":"Difficulty In Breathing",
+        "checked":false
+    },
+    {
+        "id":14,
+        "key":"None Of the Above Symptoms",
+        "checked":false
+    }
+]

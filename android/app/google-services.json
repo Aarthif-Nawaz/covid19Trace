@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "866591235035",
+    "project_id": "covid-trace-3ff35",
+    "storage_bucket": "covid-trace-3ff35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866591235035:android:ef356b6b934458e58e65fe",
+        "android_client_info": {
+          "package_name": "com.covidtrace"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866591235035-kregceego0r518d6fgacm95g2gh57alo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.covidtrace",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "866591235035-r56n9kc28s7itafl567th89lg5l1so62.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXVYr4cIA_0PIN35REJD0159U27TW3f1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866591235035-r56n9kc28s7itafl567th89lg5l1so62.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
