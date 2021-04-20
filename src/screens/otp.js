@@ -60,7 +60,7 @@ const OTPScreen = function ({ route: { params: { phoneNumber } }, navigation }) 
       setVisible(false)
       const response = await confirm.confirm(code);
       if (response) {
-        await AsyncStorage.setItem('token', "Logged In")
+        await AsyncStorage.setItem('token', phoneNumber)
         navigation.navigate('Main');
       }
     } catch (e) {

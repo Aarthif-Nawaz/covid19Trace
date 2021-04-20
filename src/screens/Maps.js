@@ -2,7 +2,7 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import CurrentLoc from './CurrentLoc';
 import VisitedLoc from './VisitedLoc';
-
+import QR from './qr'
 const Tab = createMaterialTopTabNavigator();
 
 function MapsScreen() {
@@ -24,6 +24,11 @@ function MapsScreen() {
         name="Visited Location"
         component={VisitedLoc}
         options={{ tabBarLabel: 'Visited Locations' }}
+      />
+      <Tab.Screen
+        name="QR Scanned Location"
+        component={QR}
+        options={{ tabBarLabel: 'Scan Location' }}
       />
     </Tab.Navigator>
   );
