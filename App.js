@@ -8,6 +8,7 @@ import PhoneScreen from './src/screens/telephone';
 import OTPScreen from './src/screens/otp'
 import Main from './src/screens/Main'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import TermsAndConditions from './src/screens/howto'
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from './src/utils/HelperFunctions'
 
 const styles = StyleSheet.create({
@@ -31,7 +32,7 @@ function HomeScreen({ navigation }) {
         navigation.navigate('Main')
       }
       else {
-        navigation.navigate('Telephone')
+        navigation.navigate('Terms')
       }
     } catch (e) {
       console.log(e)
@@ -64,6 +65,7 @@ function App() {
         headerLeft: null
       }}>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Terms" component={TermsAndConditions} />
         <Stack.Screen name="Telephone" component={PhoneScreen} />
         <Stack.Screen name="OTP Screen" component={OTPScreen} />
         <Stack.Screen name="Main" component={Main} />

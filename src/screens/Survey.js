@@ -106,7 +106,7 @@ function Surveyscreen({ navigation }) {
       body: JSON.stringify(details)
     }
     setLoading(true)
-    fetch('https://cvid-trace.herokuapp.com/addPatient', requestOptions)
+    fetch('https://bd1c1938cf00.ngrok.io/addPatient', requestOptions)
       .then(response => response.json())
       .then(data => {
         setLoading(false)

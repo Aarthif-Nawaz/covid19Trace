@@ -76,7 +76,7 @@ function CurrentLoc({ navigation }) {
       })
     },
       error => alert(error.message),
-      { enableHighAccuracy: true, timeout: 20000, maximumAge: 2000 }
+      {enableHighAccuracy: true, timeout: 20000}
     )
   }
 
