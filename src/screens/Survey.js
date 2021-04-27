@@ -13,6 +13,7 @@ import { Icon } from 'react-native-elements'
 import Toast from 'react-native-simple-toast';
 import AnimatedLoader from "react-native-animated-loader";
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNPickerSelect from 'react-native-picker-select';
 
 function Surveyscreen({ navigation }) {
 
@@ -20,11 +21,12 @@ function Surveyscreen({ navigation }) {
   const [sym, setSym] = useState('')
   const [address, setAddress] = useState('')
   const [title, setTitle] = useState('')
-  const [disease,setDisease] = useState([])
+  const [disease, setDisease] = useState([])
 
   const [cancel, setCancel] = useState(false)
   const [cancelText, setCancelText] = useState('')
 
+  const [covid,setCovid] = useState(null)
   const Symptoms = require('../Assets/symptoms.json')
   const [isChecked, setIsChecked] = useState(false)
   const [symptoms, setSymptoms] = useState([])
@@ -33,7 +35,7 @@ function Surveyscreen({ navigation }) {
   const [showAlert, setshowAlert] = useState(false)
   const [mess, setMessage] = useState("")
   const [phoneNumber, setPhoneNumber] = React.useState('')
-  const [loading,setLoading] = useState(false)
+  const [loading, setLoading] = useState(false)
   const [visible, setVisible] = useState(false)
 
   const fetchLocation = () => {
@@ -58,7 +60,7 @@ function Surveyscreen({ navigation }) {
       setPhoneNumber(MobileNumber)
     })
     fetchLocation()
-  },[])
+  }, [])
 
   const onChecked = (id) => {
     const data = Symptoms
@@ -78,11 +80,11 @@ function Surveyscreen({ navigation }) {
       error = true
       Toast.showWithGravity("Fill In All Fields", Toast.SHORT, Toast.BOTTOM)
     }
-    if(parseFloat(temp) > 37.5){
+    if (parseFloat(temp) > 37.5) {
       error = true
       Toast.showWithGravity("Enter A Valid Temprature", Toast.SHORT, Toast.BOTTOM)
     }
-    if(!error) {
+    if (!error) {
       setshowAlert(true)
       setCancelText("No, Cancel")
       setCancel(true)
@@ -97,7 +99,8 @@ function Surveyscreen({ navigation }) {
       phone: phoneNumber,
       temp: temp,
       symptoms: disease,
-      address: address
+      address: address,
+      covid: covid !== null ? covid : "No"
     }
 
     const requestOptions = {
@@ -155,14 +158,14 @@ function Surveyscreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#E3E3E3" }}>
       <AnimatedLoader
-          visible={loading}
-          overlayColor="rgba(255,255,255,0.75)"
-          source={require("../Assets/loading.json")}
-          animationStyle={styles.lottie}
-          speed={1}
-        >
-          <Text style={styles.headerText}>Redording Details ....</Text>
-        </AnimatedLoader>
+        visible={loading}
+        overlayColor="rgba(255,255,255,0.75)"
+        source={require("../Assets/loading.json")}
+        animationStyle={styles.lottie}
+        speed={1}
+      >
+        <Text style={styles.headerText}>Redording Details ....</Text>
+      </AnimatedLoader>
       <Modal animationType={'slide'} visible={visible} animationOutTiming={5000}
         animationOut={'slideOutUp'}>
         <View>
@@ -203,6 +206,20 @@ function Surveyscreen({ navigation }) {
             autoCompleteType={"off"}
             autoCorrect={true}
           />
+          <RNPickerSelect
+            placeholder={{
+              label: 'Are You Currently Diagnosed With Covid 19 ...',
+              value: covid,
+            }}
+            value={covid}
+            placeholderTextColor="red"
+            onValueChange={(value) => setCovid(value)}
+            items={[
+              { label: 'Yes', value: 'Yes' },
+              { label: 'No', value: 'No' },
+            ]}
+          />
+
           <Button
             style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}
             styleDisabled={{ color: 'white' }}
